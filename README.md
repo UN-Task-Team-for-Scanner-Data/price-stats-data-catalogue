@@ -1,4 +1,4 @@
-# Price Statistics Data Catalogue (proof of concept)
+# Price Statistics Data Catalogue
 
 Welcome to the *Price Statistics Data Catalogue* project repository. Read about our purpose, how to contribute, and the structure of this repository below.
 
@@ -20,6 +20,10 @@ The aim of this data catalogue is to considerably simplify the process outlined 
 
 -   Open datasets that are available to others - includes datasets that are made available by various researchers or organizations for research purposes.
 -   Proprietary but free datasets - includes datasets that are 'owned' by someone else but are summarized here so that they are easily discoverable to researchers.
+
+## Note on this version of the catalogue
+
+This data catalogue is a proof of concept. We are aiming to use this version to demonstrate the use and add value to the discipline. If this proves a success, we will look for a more permanent and powerful catalogue.
 
 # Contributing a dataset:
 
