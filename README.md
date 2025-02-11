@@ -1,6 +1,6 @@
 # Price Statistics Data Catalogue
 
-Welcome to the *Price Statistics Data Catalogue* project repository. Read about our purpose, how to contribute, and the structure of this repository below.
+Welcome to the *Price Statistics Data Catalogue* project repository. This catalogue is a key deliverable for the [reproducibility project in price statistics](https://github.com/UN-Task-Team-for-Scanner-Data/reproducibility-project). Read about our purpose, how to contribute, and the structure of this repository below.
 
 # *Raison d'être*
 
@@ -8,9 +8,9 @@ Welcome to the *Price Statistics Data Catalogue* project repository. Read about 
 
 There are many datasets that researchers in the field price statistics can use to do empirical research. Specifically, they can use
 
-1. internal (such as to a National Statistical Office) datasets that only they and their colleagues have access to,
-2. proprietary datasets (i.e. available to researchers at a cost) that may be too expensive for other researchers to acquire, or
-3. openly available or public datasets.
+1.  internal (such as to a National Statistical Office) datasets that only they and their colleagues have access to,
+2.  proprietary datasets (i.e. available to researchers at a cost) that may be too expensive for other researchers to acquire, or
+3.  openly available or public datasets.
 
 If researchers use the first two types of datasets, *replicability* is a challenge for the discipline as others may not be able to easily get access to the same datasets to validate or replicate the results. Researchers who may wish to try to use the third type of datasets with the aim of making their research reproducible (or even [replicable, or robust](https://book.the-turing-way.org/reproducible-research/overview/overview-definitions#table-of-definitions-for-reproducibility)) may be dissuaded from trying if it is too challenging to find applicable datasets or if the datasets that are available are poorly documented, requiring researchers to document the dataset for others as part of their project. Our observation is that currently in the price statistics discipline, most research is done with internal or proprietary datasets for this reason.
 
