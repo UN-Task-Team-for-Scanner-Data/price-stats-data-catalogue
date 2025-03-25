@@ -3,12 +3,16 @@
 Welcome to the *Price Statistics Data Catalogue* project repository!
 
 <p align="center">
-  <a href="[url](https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/)">
+  <a href="https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/">
     <b>Browse the catalogue</b>
   </a>
 </p>
 
-<p align="center">[*Find out more about the project and how to register new datasets!*](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/intro.html)</p>
+<p align="center">
+  <a href="https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/intro.html">
+    <i>Find out more about the project and how to register new datasets!</i>
+  </a>
+</p>
 
 # *Raison d'être*
 
