@@ -1,6 +1,18 @@
 # Price Statistics Data Catalogue
 
-Welcome to the *Price Statistics Data Catalogue* project repository. This catalogue is a key deliverable for the [reproducibility project in price statistics](https://github.com/UN-Task-Team-for-Scanner-Data/reproducibility-project). Read more about open datasets in price statistics on the [Open Data section of the Reproducibility project](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/catalogue.html)! More detail on the technical aspects of this catalogue below.
+Welcome to the *Price Statistics Data Catalogue* project repository!
+
+<p align="center">
+  <a href="https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/">
+    <b>Browse the catalogue</b>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/intro.html">
+    <i>Find out more about the project and how to register new datasets!</i>
+  </a>
+</p>
 
 # *Raison d'être*
 
