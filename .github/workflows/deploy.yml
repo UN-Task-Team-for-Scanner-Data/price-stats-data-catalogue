@@ -3,7 +3,7 @@ name: Buld and deploy data catalog
 on:
   workflow_dispatch:
   push:
-    branches: ["master"]
+    branches: main
     
 jobs:
   build:
