@@ -2,9 +2,9 @@
 
 Welcome to the *Price Statistics Data Catalogue* project repository!
 
-<center>[Browse the catalogue](https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/)</center>
+<p align="center">[**Browse the catalogue**](https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/)</p>
 
-<center>[Find out more about the project and how to register new datasets!](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/intro.html)</center>
+<p align="center">[*Find out more about the project and how to register new datasets!*](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/intro.html)</p>
 
 # *Raison d'être*
 
