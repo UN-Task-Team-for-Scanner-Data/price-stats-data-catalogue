@@ -1,0 +1,151 @@
+dataContractSpecification: 1.1.0
+id: dominicks-scanner-dataset
+info:
+  title: Dominicks finer foods scanner dataset
+  version: 0.0.1
+  description: A dataset made up of 9 years of transaction (scanner) data for 26 different categories in 100 stores sold by Dominick's finer foods (a now defunct retailer in Chicago in the 90s).
+  owner: Chicago Booth School of Business
+  contact:
+   name: Chicago Booth School of Business
+   url: https://www.chicagobooth.edu/research/kilts/research-data/dominicks
+#    email:
+
+
+### servers
+
+#servers:
+#  production:
+#    type: s3
+#    location: s3://
+#    format: parquet
+#    delimiter: new_line
+
+### terms
+
+terms:
+ usage: 'Dataset can be used for research and training purposes'
+ limitations: 'Dataset must not be republished'
+ billing: 'None'
+#  noticePeriod:
+
+
+### models
+
+models:
+  movement: 
+    description: The movement (or turnover) data. Schema identical but this is provided separately for each of the 26 categories.
+    type: table
+    fields:
+      STORE:
+        type: int
+        description: Store number (references store data on https://github.com/eurostat/dff/blob/master/CSV/stores.csv)
+        example: '76'
+        primary: true
+      UPC:
+        type: bigint
+        description: Universal Product Code for sold product
+        example: '1192603016'
+        primary: true
+      WEEK:
+        type: int
+        description: Week number representing the sales (references weeks data on https://github.com/eurostat/dff/blob/master/CSV/weeks.csv)
+        example: '306'
+        primary: true
+      MOVE:
+        type: int
+        description: Number of units sold
+        example: '1'
+      QTY:
+        type: int
+        description: Quantity of products sold
+        example: '1'
+      PRICE:
+        type: float
+        description: Price a product (i.e. the UPC) was sold for
+        example: '2.99'
+      SALES:
+        type: float
+        description: Derived variable for sales per UPC (SALES = PRICE x MOVE / QTY)
+        example: '2.99'
+  upc:
+    description: List of unique products (tracked by UPC) sold by category
+    type: table
+    fields:
+      UPC:
+        type: bigint
+        description: Universal Product Code for sold product
+        example: '1192603016'
+        primary: true
+      DESCRIP:
+        type: text
+        description: Description of the product (i.e. the UPC)
+        example: 'CAFFEDRINE CAPLETS 1'
+      NITEM:
+        type: bigint
+        description: Item code (attempt at tracking products across multiple UPCs)
+        example: '7342431'
+      COM_CODE:
+        type: int
+        description: Commodity code (Dominick's version of categories). Lower granularity that each category file, hence one file may have more than one COM_CODE
+        example: '953'
+      SIZE:
+        type: bigint
+        description: Size of the product
+        example: '16 CT'
+      # CASE:
+      #   type: int
+      #   description: Number of items in the case
+      #   example: '6'
+
+
+      
+
+
+### definitions
+
+# definitions:
+#   my_field:
+#     domain:
+#     name:
+#     title:
+#     type:
+#     description:
+#     example:
+#     pii:
+#     classification:
+
+
+### servicelevels
+
+#servicelevels:
+#  availability:
+#    description: The server is available during support hours
+#    percentage: 99.9%
+#  retention:
+#    description: Data is retained for one year because!
+#    period: P1Y
+#    unlimited: false
+#  latency:
+#    description: Data is available within 25 hours after the order was placed
+#    threshold: 25h
+#    sourceTimestampField: orders.order_timestamp
+#    processedTimestampField: orders.processed_timestamp
+#  freshness:
+#    description: The age of the youngest row in a table.
+#    threshold: 25h
+#    timestampField: orders.order_timestamp
+#  frequency:
+#    description: Data is delivered once a day
+#    type: batch # or streaming
+#    interval: daily # for batch, either or cron
+#    cron: 0 0 * * * # for batch, either or interval
+#  support:
+#    description: The data is available during typical business hours at headquarters
+#    time: 9am to 5pm in EST on business days
+#    responseTime: 1h
+#  backup:
+#    description: Data is backed up once a week, every Sunday at 0:00 UTC.
+#    interval: weekly
+#    cron: 0 0 * * 0
+#    recoveryTime: 24 hours
+#    recoveryPoint: 1 week
