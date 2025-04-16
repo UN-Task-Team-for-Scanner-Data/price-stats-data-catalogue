@@ -10,9 +10,16 @@ Welcome to the *Price Statistics Data Catalogue* project repository!
 
 <p align="center">
   <a href="https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/catalogue.html">
-    <i>Find out more about how the catalogue works and how to register new datasets!</i>
+    <i>Find out more about how the catalogue works!</i>
   </a>
 </p>
+
+<p align="center">
+  <a href="/CONTRIBUTING.md">
+    <i>How to register an open dataset to the catalogue?</i>
+  </a>
+</p>
+
 
 # *Raison d'être*
 
@@ -47,4 +54,4 @@ We are exploring the use of [data contract cli](https://cli.datacontract.com/) a
 
 ## Who are we?
 
-This project is led by a workstream of the [UN Task Team on Scanner and web scraped data](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml), a part of the [UN Committee of Experts on Big Data and Data Science for Official Statistics (UN-CEBD)](https://unstats.un.org/bigdata/about/index.cshtml). As part of the replicability project, our workstream is also working on a white paper on FAIR and reproducible research for price statistics.
+This catalogue is maintained by the reproducibility project team (which is a workstream of the UN Task Team for Scanner data). [Read more about us here](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/about.html).
