@@ -9,9 +9,14 @@ info:
   owner: ILO
 
 terms:
- usage: 'Open dataset, publicly shared by ILO et al (2004) CPI manual (see page  395)'
- limitations: 'None'
- billing: 'None'
+ usage: '
+ Open dataset, publicly shared by ILO et al (2004) CPI manual
+ 
+
+ Cite as: 
+ 
+ (TBC) ILO et al (2004) Consumer price index manual: Theory and Practice [Turvey Data Set, p395]
+ '
 
 models:
   dataset: 
