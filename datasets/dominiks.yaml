@@ -2,7 +2,7 @@ dataContractSpecification: 1.1.0
 id: dominicks-scanner-dataset
 info:
   title: Dominicks finer foods scanner dataset
-  version: 0.0.1
+  version: '1.0'
   description: A dataset made up of 9 years of transaction (scanner) data for 26 different categories in 100 stores sold by Dominick's finer foods (a now defunct retailer in Chicago in the 90s).
   owner: Chicago Booth School of Business
   contact:
@@ -11,22 +11,32 @@ info:
 #    email:
 
 
-### servers
-
-#servers:
-#  production:
-#    type: s3
-#    location: s3://
-#    format: parquet
-#    delimiter: new_line
-
 ### terms
 
 terms:
- usage: 'Dataset can be used for research and training purposes'
- limitations: 'Dataset must not be republished'
- billing: 'None'
-#  noticePeriod:
+ usage: '
+  Open dataset on seasonal products shared by Chicago Booth School Kilts Center for Marketing
+  <br><br>
+  <b>Cite as:</b><br>
+  <u>APA</u>:<br>
+  TBC
+  <br><br>
+  <u>Chicago</u>:<br> 
+  TBC
+  <br><br>
+  <u>BibTeX</u>:<br>
+  <pre>
+    @misc{dominiks_dataset,<br>
+      author = {Chicago Booth School},<br>
+      title = {Dominicks Finer Foods Dataset},<br>
+      year = {2022},<br>
+      doi = https://doi.org/10.2785/873932,<br>
+      howpublished = {\url{https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/e52b1b37-38f3-4f2d-82be-14b005da1ce3/details}},<br>
+      note = {Accessed: YYYY-MM-DD} % Optional: date accessed <br>
+    } <br>
+  </pre>
+  '
+
 
 
 ### models
@@ -92,60 +102,10 @@ models:
         type: bigint
         description: Size of the product
         example: '16 CT'
-      # CASE:
-      #   type: int
-      #   description: Number of items in the case
-      #   example: '6'
 
-
-      
-
-
-### definitions
-
-# definitions:
-#   my_field:
-#     domain:
-#     name:
-#     title:
-#     type:
-#     description:
-#     example:
-#     pii:
-#     classification:
-
-
-### servicelevels
-
-#servicelevels:
-#  availability:
-#    description: The server is available during support hours
-#    percentage: 99.9%
-#  retention:
-#    description: Data is retained for one year because!
-#    period: P1Y
-#    unlimited: false
-#  latency:
-#    description: Data is available within 25 hours after the order was placed
-#    threshold: 25h
-#    sourceTimestampField: orders.order_timestamp
-#    processedTimestampField: orders.processed_timestamp
-#  freshness:
-#    description: The age of the youngest row in a table.
-#    threshold: 25h
-#    timestampField: orders.order_timestamp
-#  frequency:
-#    description: Data is delivered once a day
-#    type: batch # or streaming
-#    interval: daily # for batch, either or cron
-#    cron: 0 0 * * * # for batch, either or interval
-#  support:
-#    description: The data is available during typical business hours at headquarters
-#    time: 9am to 5pm in EST on business days
-#    responseTime: 1h
-#  backup:
-#    description: Data is backed up once a week, every Sunday at 0:00 UTC.
-#    interval: weekly
-#    cron: 0 0 * * 0
-#    recoveryTime: 24 hours
-#    recoveryPoint: 1 week
+links:
+  Dataset-page: https://www.chicagobooth.edu/research/kilts/research-data/dominicks
+  Manual: https://www.chicagobooth.edu/-/media/enterprise/centers/kilts/datasets/dominicks-dataset/dominicks-manual-and-codebook_kiltscenter
+  Mehrhoff-paper: https://stats.unece.org/ottawagroup/download/f577.pdf
+tags:
+- scanner-dataset

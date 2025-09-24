@@ -2,7 +2,7 @@ dataContractSpecification: 1.1.0
 id: turvey-dataset
 info:
   title: Modified Turvey Dataset
-  version: 0.0.1
+  version: '3.0'
   description: '
   Modified version of an original dataset created by Ralph Turvey in 1979. <a href="https://webapps.ilo.org/public/libdoc/ilo/P/09606/09606(1979-4)XIII-XXIII.pdf">Turvey (1979)</a> shared an artificial dataset for 5 seasonal commodities over 4 years. The original dataset was modified twice. This is the version most commonly used, as taken from the <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf">ILO et al (2004) CPI Manual: Theory and Practice</a>.
   '
@@ -12,11 +12,26 @@ terms:
  usage: '
  Open dataset, publicly shared by ILO et al (2004) CPI manual
  
+ <b>Cite as:</b><br>
+  <u>APA</u>:<br>
+  ILO et al (2004) Turvey Dataset [Data set]. Consumer Price Index manual: theory and practice. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf
+  <br><br>
+  <u>Chicago</u>:<br> 
+  ILO et al "Turvey Dataset". Consumer Price Index manual: theory and practice (2004). https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf
+  <br><br>
+  <u>BibTeX</u>:
+  <pre>
+    @misc{turvey_dataset,<br>
+      author = {ILO},<br>
+      title = {Turvey Dataset},<br>
+      year = {2004},<br>
+      doi = https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf,<br>
+      howpublished = {\url{https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf}},<br>
+      note = {Accessed: YYYY-MM-DD} % Optional: date accessed <br>
+    }<br>
+  </pre>
+  '
 
- <b>Cite as:</b> 
-
- (TBC) <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf">ILO et al (2004) Consumer price index manual: Theory and Practice [Turvey Data Set, p395]</a>
- '
 
 models:
   dataset: 
@@ -62,39 +77,4 @@ links:
 tags:
 - seasonal-dataset
 
-
-
-
-# links:
-#   Dataset in CPI Manual (2004), p395: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf
-
-# dataContractSpecification: 1.1.0
-# id: dominicks-scanner-dataset
-# info:
-#   title: Dominicks finer foods scanner dataset
-#   version: 0.0.1
-#   description: A dataset made up of 9 years of transaction (scanner) data for 26 different categories in 100 stores sold by Dominick's finer foods (a now defunct retailer in Chicago in the 90s).
-#   owner: Chicago Booth School of Business
-#   contact:
-#    name: Chicago Booth School of Business
-#    url: https://www.chicagobooth.edu/research/kilts/research-data/dominicks
-# #    email:
-
-
-### servers
-
-#servers:
-#  production:
-#    type: s3
-#    location: s3://
-#    format: parquet
-#    delimiter: new_line
-
-### terms
-
-
-#  noticePeriod:
-
-
-### models
 
