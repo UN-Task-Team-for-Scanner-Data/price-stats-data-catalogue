@@ -4,18 +4,6 @@ info:
   title: Modified Turvey Dataset
   version: 0.0.1
   description: '
-  <style>
-    a:link {
-      color: blue;
-      background-color: transparent;
-      text-decoration: none;
-    }
-    a:visited {
-      color: purple;
-      background-color: transparent;
-      text-decoration: none;
-    }
-  </style>
   Modified version of an original dataset created by Ralph Turvey in 1979. <a href="https://webapps.ilo.org/public/libdoc/ilo/P/09606/09606(1979-4)XIII-XXIII.pdf">Turvey (1979)</a> shared an artificial dataset for 5 seasonal commodities over 4 years. The original dataset was modified twice. This is the version most commonly used, as taken from the <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf">ILO et al (2004) CPI Manual: Theory and Practice</a>.
   '
   owner: ILO
