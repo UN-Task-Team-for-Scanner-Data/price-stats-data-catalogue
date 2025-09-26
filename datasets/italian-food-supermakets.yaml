@@ -3,12 +3,7 @@ id: italian-food-supermarkets
 info:
   title: 'Variations of Food Prices in Italian Supermarkets'
   version: '1.0'
-  description: 'This web scraped dataset includes retail prices for meat, fruit, and vegetable products collected over a period spanning from December 2020 to March 2023 (2 years and 4 months). The dataset contains is based on:<br>
-  - Number of unique products: 2361<br>
-  - Number of distinct stores: 20<br>
-  - Time period covered: ~2 years, 4.5 months (2020-12-03 to 2023-04-14)<br>
-  - Statistics on the web scraping: 29 distinct web scrapes were completed during the time, with an average 139k products captured each time. Web scraping coverage started to decline by mid-2022.<br>
-  - Dataset cleaned and no missing values are present.<br>
+  description: 'This web scraped dataset includes retail prices for meat, fruit, and vegetable products collected over a period spanning from December 2020 to March 2023 (2 years and 4.5 months).<br>
   <br>
   Dataset facilitates comprehensive analyses, enabling exploration of regional price variations, comparisons across product categories, and time-series investigations into price dynamics within the Italian retail food market.
   '
@@ -66,7 +61,12 @@ models:
     fields:
       date:
         type: object
-        description: Date of price collection
+        description: 'Date of price collection<br>
+        <br>
+        Dataset total coverage is 2 years, 4.5 months (2020-12-03 to 2023-04-14)<br>
+        <br>
+        Dataset based on 29 distinct web scrapes, with an average 139k products captured each time. Web scraping coverage started to decline by mid-2022.
+        '
         example: '2020-12-03'
         primary: false
       price:
@@ -76,12 +76,18 @@ models:
         primary: false
       product_id:
         type: integer
-        description: 'A unique identifier assigned to each product.'
+        description: 'A unique identifier assigned to each product.<br>
+        <br>
+        There are 2,361 unique products
+        '
         example: '2'
         primary: false
       store_id:
         type: integer
-        description: 'Anonymized unique identifier of the store where the price was recorded'
+        description: 'Anonymized unique identifier of the store where the price was recorded<br>
+        <br>
+        There are 20 distinct stores covered by the dataset
+        '
         example: '2'
       region:
         type: object
