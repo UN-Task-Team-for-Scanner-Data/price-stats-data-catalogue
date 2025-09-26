@@ -9,7 +9,7 @@ Welcome to the *Price Statistics Data Catalogue* project repository!
 </p>
 
 <p align="center">
-  <a href="https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/datasets-guidance/catalogue.html">
+  <a href="https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/about.html">
     <i>Find out more about how the catalogue works!</i>
   </a>
 </p>
