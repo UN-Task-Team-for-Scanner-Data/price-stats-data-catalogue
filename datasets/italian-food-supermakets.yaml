@@ -112,6 +112,6 @@ examples:
   2020-12-03,2.49,2,8,lazio,arance navelina italia calibro 1.5 kg,Oranges,Fruit
     '
 links:
-  Dataset-p395: https://doi.org/10.5281/zenodo.14927602
+  Dataset: https://doi.org/10.5281/zenodo.14927602
 tags:
 - web-scraped-dataset
