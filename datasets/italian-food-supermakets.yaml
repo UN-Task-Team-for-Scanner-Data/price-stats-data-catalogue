@@ -1,0 +1,117 @@
+dataContractSpecification: 1.1.0
+id: italian-food-supermarkets
+info:
+  title: 'Variations of Food Prices in Italian Supermarkets'
+  version: '1.0'
+  description: 'The dataset includes retail prices for meat, fruit, and vegetable products collected over a period spanning from December 2020 to March 2023.'
+  owner: 'Sasso, Daniele, Luca Bacco, Luigi Palumbo, Juri Marcucci, Niccolo Salvini, Tiziana Laureti, and Luca Vollero'
+  contact:
+    name: 'Sasso et al'
+    url: https://doi.org/10.5281/zenodo.14927602
+
+### terms
+
+terms:
+ usage: '
+Open dataset registered to Zenodo.
+
+ <b>Cite as:</b><br>
+  <u>APA</u>:<br>
+  Sasso, D., Bacco, L., Palumbo, L., Marcucci, J., Salvini, N., Laureti, T., & Vollero, L. (2025). Variations of Food Prices in Italian Supermarkets (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.14927602
+  <br><br>
+  <u>Chicago</u>:<br> 
+  Sasso, Daniele, Luca Bacco, Luigi Palumbo, Juri Marcucci, Niccolo Salvini, Tiziana Laureti, and Luca Vollero. "Variations of Food Prices in Italian Supermarkets". Zenodo, February 25, 2025. https://doi.org/10.5281/zenodo.14927602.
+  <br><br>
+  <u>BibTeX</u>:
+  <pre>
+    @dataset{sasso_2025_14927602,<br>
+      author       = {Sasso, Daniele and<br>
+                      Bacco, Luca and<br>
+                      Palumbo, Luigi and<br>
+                      Marcucci, Juri and<br>
+                      Salvini, Niccolo and<br>
+                      Laureti, Tiziana and<br>
+                      Vollero, Luca},<br>
+      title        = {Variations of Food Prices in Italian Supermarkets},<br>
+      month        = feb,<br>
+      year         = 2025,<br>
+      publisher    = {Zenodo},<br>
+      version      = {1.0},<br>
+      doi          = {10.5281/zenodo.14927602},<br>
+      url          = {https://doi.org/10.5281/zenodo.14927602},<br>
+    }<br>
+  </pre>
+ '
+
+
+### models
+
+models:
+  dataset: 
+    description: '
+    File Information:
+
+    - Format: CSV (.csv), UTF-8 encoded, comma-separated.
+    - Each row corresponds to one product observation at a specific store on a specific date.
+    - No missing values are present in the cleaned version.
+    '
+    type: table
+    fields:
+      date:
+        type: object
+        description: Date of price collection
+        example: '2020-12-03'
+        primary: false
+      price:
+        type: float
+        description: 'Retail price in euros (EUR), using a decimal point (.)'
+        example: '1.99'
+        primary: false
+      product_id:
+        type: integer
+        description: 'A unique identifier assigned to each product.'
+        example: '2'
+        primary: false
+      store_id:
+        type: integer
+        description: 'Anonymized unique identifier of the store where the price was recorded'
+        example: '2'
+      region:
+        type: object
+        description: 'Italian region where the store is located'
+        example: 'Calabria'
+        primary: false
+      product:
+        type: object
+        description: 'Full commercial name of the product, including quantity or weight'
+        example: 'arance navelina italia calibro 1.5 kg'
+        primary: false
+      COICOP5:
+        type: object
+        description: 'Product classification at the 5-digit level based on the COICOP nomenclature. Classification assigned via manual annotation and rule-based categorization using domain-specific keywords.'
+        example: 'Oranges'
+        primary: false
+      COICOP4:
+        type: object
+        description: 'Higher-level COICOP category. Classification assigned via manual annotation and rule-based categorization using domain-specific keywords (tied to COICOP5).'
+        example: 'Fruit'
+        primary: false
+examples:
+- type: csv
+  description: An example first 5 rows of the dataset.
+  data: 'date,price,product_id,store_id,region,product,COICOP5,COICOP4
+
+  2020-12-03,1.99,2,2,calabria,arance navelina italia calibro 1.5 kg,Oranges,Fruit
+
+  2020-12-03,2.48,2,3,lazio,arance navelina italia calibro 1.5 kg,Oranges,Fruit
+
+  2020-12-03,2.49,2,4,calabria,arance navelina italia calibro 1.5 kg,Oranges,Fruit
+
+  2020-12-03,1.99,2,5,calabria,arance navelina italia calibro 1.5 kg,Oranges,Fruit
+
+  2020-12-03,2.49,2,8,lazio,arance navelina italia calibro 1.5 kg,Oranges,Fruit
+    '
+links:
+  Dataset-p395: https://doi.org/10.5281/zenodo.14927602
+tags:
+- web-scraped-dataset
