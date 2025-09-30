@@ -21,20 +21,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install datacontract-cli[all]
+          pip install beautifulsoup4
           
       # change directory first and then output to a site folder
       - name: create catalog
         run: |
           cd datasets/
           datacontract catalog --output ../_site/
-
-      # Setup conda env
-      - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v1
-        with:
-          environment-file: environment.yml
-          environment-name: data_catalogue
-          cache-environment: true
 
       # Run post-processing to change html files
       - name: Run script
