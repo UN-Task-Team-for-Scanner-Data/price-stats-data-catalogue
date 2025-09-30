@@ -1,2 +1,3 @@
 #ignore html files if they are accidentally created during dev
 *.html
+*.ipynb
