@@ -8,3 +8,6 @@ dependencies:
   - beautifulsoup4
   - git
   - ipykernel
+  - pip
+  # - pip:
+  #   - datacontract-cli[all]
