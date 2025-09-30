@@ -3,7 +3,7 @@ id: italian-food-supermarkets
 info:
   title: 'Variations of Food Prices in Italian Supermarkets'
   version: '1.0'
-  description: 'This web scraped dataset includes retail prices for meat, fruit, and vegetable products collected over a period spanning from December 2020 to March 2023 (2 years and 4.5 months).<br>
+  description: 'This web scraped dataset includes retail prices for meat, fruit, and vegetable products collected over a period spanning from December 2020 to March 2023 (2 years and 4.5 months or 862 days).<br>
   <br>
   Dataset facilitates comprehensive analyses, enabling exploration of regional price variations, comparisons across product categories, and time-series investigations into price dynamics within the Italian retail food market.
   '
@@ -65,7 +65,7 @@ models:
         <br>
         Dataset total coverage is 2 years, 4.5 months (2020-12-03 to 2023-04-14)<br>
         <br>
-        Dataset based on 29 distinct web scrapes, with an average 139k products captured each time. Web scraping coverage started to decline by mid-2022.
+        Dataset based on 841 distinct web scrapes, with an average 236 unique products captured each time per scraped store. The amount of web offers started to decline by mid-2022.
         '
         example: '2020-12-03'
         primary: false
@@ -78,7 +78,7 @@ models:
         type: integer
         description: 'A unique identifier assigned to each product.<br>
         <br>
-        There are 2,361 unique products
+        There are 2,361 unique products in the sample spread relatively equally across the COICOP categories.
         '
         example: '2'
         primary: false
@@ -91,7 +91,10 @@ models:
         example: '2'
       region:
         type: object
-        description: 'Italian region where the store is located'
+        description: 'Italian region where the store is located<br>
+        <br>
+        There are 7 distinct regions of Italy covered by the dataset.
+        '
         example: 'Calabria'
         primary: false
       product:
@@ -101,7 +104,9 @@ models:
         primary: false
       COICOP5:
         type: object
-        description: 'Product classification at the 5-digit level based on the COICOP nomenclature. Classification assigned via manual annotation and rule-based categorization using domain-specific keywords.'
+        description: 'Product classification at the 5-digit level based on the COICOP nomenclature.<br>
+        <br>
+        There are 24 COICOP5 categories covered by the dataset. Classification was assigned via manual annotation and rule-based categorization using domain-specific keywords.'
         example: 'Oranges'
         primary: false
       COICOP4:
