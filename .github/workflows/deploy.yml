@@ -28,10 +28,22 @@ jobs:
           cd datasets/
           datacontract catalog --output ../_site/
 
+      # Setup conda env
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+          environment-name: data_catalogue
+          cache-environment: true
+
+      # Run post-processing to change html files
+      - name: Run script
+        run: python post-processing.py.py
+
       # optional step for debugging
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+      # - name: List files in the repository
+      #   run: |
+      #     ls ${{ github.workspace }}
         
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
