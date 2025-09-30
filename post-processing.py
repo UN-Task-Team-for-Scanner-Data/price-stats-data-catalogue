@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import os
 
 def update_index():
     """
