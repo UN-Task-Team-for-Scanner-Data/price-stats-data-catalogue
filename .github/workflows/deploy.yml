@@ -38,7 +38,7 @@ jobs:
 
       # Run post-processing to change html files
       - name: Run script
-        run: python post-processing.py.py
+        run: python post-processing.py
 
       # optional step for debugging
       # - name: List files in the repository
