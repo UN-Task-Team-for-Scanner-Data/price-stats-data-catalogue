@@ -41,7 +41,10 @@ def update_index():
 
 def update_dataset(_path):
     """
-    Update each dataset's html
+    Update each dataset's html:
+    - change data contract to dataset
+    - fix catalogue home display and link
+    - fix reference to the project
     """
     # Open and read the HTML file
     with open(_path, 'r') as file:
@@ -58,11 +61,19 @@ def update_dataset(_path):
     a_tag_top_left['href'] = "https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/"
     a_tag_top_left
 
-    # Modify the reference to the project
+    # Modify the reference to the project at the top right
     a_tag_top_right = soup.find('a', class_="text-sky-500 hover:text-gray-700 text-sm font-semibold")
     # <a class="text-sky-500 hover:text-gray-700 text-sm font-semibold" href="https://datacontract.com" target="_blank">datacontract.com</a>
     a_tag_top_right.string = 'Price Statistics Reproducibility Project'
     a_tag_top_right['href'] = "https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/"
+
+    # Replace referneces of 'data contract' as small grey text next to big sections - may get confusing
+    p_tags = soup.find_all("p", class_="text-sm text-gray-500")
+    for p_tag in p_tags:
+        if 'data contract' in p_tag.string:
+            old_string = p_tag.string
+            p_tag.string = old_string.replace("data contract", "dataset")
+            print(p_tag.string)
 
     # Save the modified HTML back to the file
     with open(_path, 'w') as file:
