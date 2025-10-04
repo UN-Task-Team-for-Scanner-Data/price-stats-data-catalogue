@@ -1,5 +1,5 @@
 dataContractSpecification: 1.1.0
-id: italian-food-supermarkets
+id: italian-food-supermarkets-dataset
 info:
   title: 'Variations of Food Prices in Italian Supermarkets'
   version: '1.0'

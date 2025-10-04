@@ -16,6 +16,9 @@ def update_index():
     with open(file_path, 'r') as file:
         html_content = file.read()
 
+    # Update the html title from data contract to datsaet
+    soup.title.string = 'Price Stats Data Catalogue'
+
     # Create a BeautifulSoup object to parse the content
     soup = BeautifulSoup(html_content, 'html.parser')
 
@@ -50,6 +53,9 @@ def update_dataset(_path):
     with open(_path, 'r') as file:
         html_content = file.read()
     soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Update the html title from data contract to datsaet
+    soup.title.string = 'Price Stats Dataset'
 
     # Change the main text
     h2_tag_main_title = soup.find('h2', class_="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight")

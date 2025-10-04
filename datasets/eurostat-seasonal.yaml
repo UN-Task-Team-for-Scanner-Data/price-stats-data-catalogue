@@ -1,5 +1,5 @@
 dataContractSpecification: 1.1.0
-id: eurostat-mutlitlateral-seasonal-data
+id: eurostat-mutlitlateral-seasonal-dataset
 info:
   title: Eurostat seasonality multilateral dataset
   version: '1.0'
