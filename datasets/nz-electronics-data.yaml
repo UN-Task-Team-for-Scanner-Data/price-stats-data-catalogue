@@ -3,10 +3,10 @@ id: nz-electronics-modified-dataset
 info:
   title: Modified Electronics NZ dataset
   version: '1.0'
-  description: 'A modified dataset that was based on real scanner data obtained from GfK. The dataset contains sales (both quanitity and total sales) by month for 459 unique products in a single consumer electronic category for a total of 26 months (2017-01-01 to 2019-02-01). The dataset includes 11 different quality chacacteristics (all are obfuscated to hide their true values). Distribution of quality characteristis and their relationships to quality adjustment was maintained during the modification process.<br>
-  <br>
-  Dataset facilitates evaluation of quality adjustment methods with scanner data.
-  '
+  description: |
+    A modified dataset that was based on real scanner data obtained from GfK. The dataset contains sales (both quanitity and total sales) by month for 459 unique products in a single consumer electronic category for a total of 26 months (2017-01-01 to 2019-02-01). The dataset includes 11 different quality chacacteristics (all are obfuscated to hide their true values). Distribution of quality characteristis and their relationships to quality adjustment was maintained during the modification process.<br>
+    <br>
+    Dataset facilitates evaluation of quality adjustment methods with scanner data.
   owner: Frances Krsinch
   contact:
    name: Frances Krsinch
@@ -17,7 +17,7 @@ info:
 
 terms:
  usage: '
-  Open dataset initially shared for research purposes.
+  Open dataset initially shared for research purposes on the UN Global Platform GitLab. Version referenced here is cleaned and uploaded to Zenodo.
   <br><br>
   <b>Cite as:</b><br>
   <u>APA</u>:<br>
@@ -29,7 +29,7 @@ terms:
   <u>BibTeX</u>:<br>
   <pre>
     @dataset{nz-modified-scanner-dataset,<br>
-      author = {Frances Krsinich},<br>
+      author = {Frances Krsinich},<br
       title = {Modified Electronics NZ dataset},<br>
       year = {2019},<br>
       doi = https://doi.org/XXXXX,<br>
@@ -43,7 +43,7 @@ terms:
 
 models:
   dataset: 
-    description: The dataset.
+    description: The dataset is in one file.
     type: table
     fields:
       MONTH_NUM:
@@ -52,6 +52,14 @@ models:
         example: '2017-01-01'
         primaryKey: true
         tags: ["business-timestamp"]
+      PRODID_NUM:
+        type: int
+        description: 'Dintinct product identifier number assigned during modification process to simulate a product ID (such as GTIN).<br>
+          <br>
+          There are total of 459 unique products in the dataset.
+          '
+        example: '3'
+        primaryKey: true
       CHAR1:
         type: float
         description: Modified quality characteristic 1 (obfuscated to hide true value).
@@ -100,43 +108,33 @@ models:
         type: object
         description: Modified quality characteristic 11 (obfuscated to hide true value). Represents the brand of the product.
         example: 'brand_a'
-      PRODID_NUM:
-        type: int
-        description: 'Dintinct product identifier number assigned during modification process to simulate a product ID (such as GTIN).<br>
-        <br>
-        There is considerable churn in the data, the average uniquie product remains in sample for 8.4 months.
-        '
-        example: '3'
-        primaryKey: true
-        quality:
-          - type: text
-            description: There are times when prodid_num (and all other quality characteristics) repeat in the month. This is due to other variables that separted those products being ommitted during the data modification process and product ids were assigned at the end. Recommend to groupby to use the data.
       QUANTITY:
         type: int
         description: Quantity of products sold during the period (month).
         example: '280'
       VALUE:
         type: float
-        description: 'The total sales of products sold during the period (month) in New Zealand dollars (NZD), could also be referred to as turnover.<br>
-        <br>
-        To calcualte unit prices, divide VALUE by QUANTITY.
-        ' 
+        description: The total sales of products sold during the period (month) in New Zealand dollars (NZD), could also be referred to as turnover.<br>
         example: '196420'
+      UNIT_PRICE:
+        type: float
+        description: The unit price of the product during the period (month) in New Zealand dollars (NZD), calculated as VALUE divided by QUANTITY.<br>
+        example: '701.5'
     primaryKey: ["PRODID_NUM", "MONTH_NUM"]
 examples:
 - type: csv
   description: An example first 5 rows of the dataset.
-  data: 'month_num,char11,char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,prodid_num,quantity,value
+  data: 'month_num,prodid_num,char11,char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,quantity,value,unit_price
 
-  2017-01-01,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,3,280,196420
+  2017-01-01,3,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,280,196420,701.5
 
-  2017-02-01,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,3,126,85312
+  2017-01-01,8,brand_a,10.6,3718,val_i,val_a,val_a,PRG566,AAA,100M,B230,cuy,973,360137,370.1305241521069
 
-  2017-03-01,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,3,148,95920
+  2017-01-01,12,brand_a,10.6,3718,val_u,val_a,val_e,FBOK6552,AAA,100M,B230,cuy,68,24506,360.38235294117646
 
-  2017-04-01,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,3,56,38552
+  2017-01-01,19,brand_a,10.6,7814,val_i,val_a,val_a,PRG566,CCC,150D,B230,ted,181,117971,651.7734806629834
 
-  2017-05-01,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,3,69,47397
+  2017-01-01,34,brand_a,11.3,16006,val_n,val_a,val_a,GR4400,AAA,100M,B230,ted,2,3701,1850.5
     '
 links:
   Dataset: https://code.officialstatistics.org/scanner-task-team-gwg/FEWS_package/-/raw/master/data/SampleDataSet.csv
