@@ -46,7 +46,7 @@ This data catalogue is a proof of concept. We are aiming to use this version to 
 
 # Contributing a dataset:
 
-To contribute a dataset to this catalogue, please submit either an issue to this repository outlining the dataset and why it should be added to the catalogue, or a pull request with the proposed changes for us to review and approve.
+To contribute a dataset to this catalogue, please submit either an issue to this repository outlining the dataset and why it should be added to the catalogue, or a pull request with the proposed changes for us to review and approve. See the full contriubting proces flushed out on the [price statistics reproducibility project site](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html). 
 
 ## Technical context
 
