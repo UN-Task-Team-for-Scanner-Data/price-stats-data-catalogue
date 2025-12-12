@@ -22,7 +22,7 @@ body:
   attributes:
     label: Tell us a bit about the dataset
     description: Cover anything that would help someone underststand the dataset from a few sentences. 
-      placeholder: Full scanner dataset from country ABC
+    placeholder: Full scanner dataset from country ABC
   validations:
     required: true
 - type: dropdown
