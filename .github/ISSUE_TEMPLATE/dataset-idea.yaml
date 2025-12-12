@@ -1,4 +1,3 @@
----
 name: Dataset idea
 about: Template to walk a person through documenting a new dataset idea
 title: IDEA
@@ -38,4 +37,3 @@ body:
       - other (specify below)
   validations:
     required: true
----
