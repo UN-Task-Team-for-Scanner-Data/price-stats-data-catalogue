@@ -13,16 +13,16 @@
 
 Remove section if not applicable.
 
-* **Summarize dataset** (if not obvious in your PR)
+**Summarize dataset** (if not obvious in your PR)
 
 
-* **Summarize value of dataset to researchers** (if not obvious in your PR)
+**Summarize value of dataset to researchers** (if not obvious in your PR)
 
 
-* **What maturity level are you aiming for in registering the dataset?**
+**What maturity level are you aiming for in registering the dataset?**
 
 
-* **List new category labels if you are proposing any**
+**List new category labels if you are proposing any**
 
 
 
@@ -32,10 +32,10 @@ Remove section if not applicable.
 
 Remove section if not applicable.
 
-* **Summarize change proposed**
+**Summarize change proposed**
 
 
-* **What maturity level do you think the dataset now reaches?**
+**What maturity level do you think the dataset now reaches?**
 
 
-* **List new category labels if you are proposing any**
+**List new category labels if you are proposing any**
