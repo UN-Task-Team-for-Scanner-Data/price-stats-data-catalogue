@@ -11,6 +11,9 @@ body:
       Thank you for telling us about a new idea for the catalogue! 
 
       This guide will ask you a few questions to help us understand the dataset better. For context to the overall process of contribuing a dataset to the catalogue, check out the [guide on the reproducibility project site](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html).
+
+      ## Help us understand the dataset
+
 - type: input
   id: dataset-name
   attributes:
@@ -55,6 +58,12 @@ body:
       - other/don't know
   validations:
     required: true
+- type: markdown
+  attributes:
+    value: |
+
+      ## Help us categorize the dataset
+
 - type: dropdown
   id: dataset-type
   attributes:
@@ -95,4 +104,20 @@ body:
     description: If you specified 'other' above, please describe it here
   validations:
     required: false
+- type: markdown
+  attributes:
+    value: |
 
+      ## Contact info
+
+- type: input
+  id: contact-me
+  attributes:
+    label: How can we contact you (outside of using this issue)?
+    description: |
+      We are going to respond to this issue when we process your request. However if you don't use GitHub often, please let us know how else we can contact you for any follow up.
+    
+      **NOTE**: Your email will be public (as it will be in the GitHub issue). If you would like to provide your email directly, please reach out to the [Project Team lead](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/about.html#project-team-members).
+    placeholder: ex. firstname.lastname@nso.org
+  validations:
+    required: false
