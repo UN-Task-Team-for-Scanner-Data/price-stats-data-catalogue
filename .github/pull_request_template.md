@@ -1,6 +1,6 @@
 ## Checklist
 
-(Switch to preview to follow the links)
+(Switch to "Preview" to follow the links)
 
 -   [ ] I have read the [contribution guide and reviewed the maturity model](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html) 
 

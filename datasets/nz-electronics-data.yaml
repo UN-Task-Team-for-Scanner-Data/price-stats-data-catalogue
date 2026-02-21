@@ -60,6 +60,9 @@ models:
           '
         example: '3'
         primaryKey: true
+        quality:
+          - type: text
+            description: There are times when prodid_num (and all other quality characteristics) repeat in the month. This is due to other variables that separted those products being ommitted during the data modification process and product ids were assigned at the end. Recommend to groupby to use the data.
       CHAR1:
         type: float
         description: Modified quality characteristic 1 (obfuscated to hide true value).
@@ -137,8 +140,9 @@ examples:
   2017-01-01,34,brand_a,11.3,16006,val_n,val_a,val_a,GR4400,AAA,100M,B230,ted,2,3701,1850.5
     '
 links:
-  Dataset: https://code.officialstatistics.org/scanner-task-team-gwg/FEWS_package/-/raw/master/data/SampleDataSet.csv
-  Dataset-intro-blog: https://sergegoussev.github.io/price_stats_experiments/notebooks/nz_electronics_2019.html
+  Dataset-as-csv: https://code.officialstatistics.org/scanner-task-team-gwg/FEWS_package/-/raw/master/data/SampleDataSet.csv
+  Dataset-as-Rdata: https://github.com/StatisticsNZ/multilateral/blob/master/data/synthetic_gfk.RData
+  R-documentation-summary-of-dataset: https://www.rdocumentation.org/packages/multilateral/versions/1.0.0/topics/synthetic_gfk
 tags:
 - scanner-dataset
 - electronics-and-applicances
