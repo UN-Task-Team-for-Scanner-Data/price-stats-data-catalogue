@@ -86,7 +86,6 @@ def update_dataset(_path):
 
 if __name__ == "__main__":
     update_index()
-    files = os.listdir('_site/')
-    files.remove('index.html')
-    for file in files:
-        update_dataset('_site/datasets/'+file)
+    datasets = os.listdir('_site/datasets')
+    for dataset in datasets:
+        update_dataset('_site/datasets/'+dataset)
