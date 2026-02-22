@@ -1,0 +1,81 @@
+apiVersion: "v3.1.0"
+kind: "DataContract"
+id: "turvey-modified"
+version: "3.0"
+status: "<a href='https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html#maturity-model'>Documentation level</a>: 1"
+name: "Turvey modified dataset"
+description:
+  purpose: "Modified version of an original dataset created by Ralph Turvey in 1979. Turvey (1979) shared an artificial dataset for 5 seasonal commodities over 4 years. The original dataset was modified twice. This is the version most commonly used, as taken from the ILO et al (2004) CPI Manual: Theory and Practice."
+  # TO DO: review and test later. Commented out as this does not render by datacontract-cli with the current version
+  # customProperties:
+  #   - property: "APA Citation"
+  #     value: "ILO et al (2004) Turvey Dataset [Data set]. Consumer Price Index manual: theory and practice. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "How to cite this dataset using APA style"
+  #   - property: "Chicago Citation"
+  #     value: "ILO et al \"Turvey Dataset\". Consumer Price Index manual: theory and practice (2004). https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "How to cite this dataset using Chicago style"
+  #   - property: "Bibtex citation"
+  #     value: "@misc{turvey_dataset,author = {ILO}, title= {Turvey Dataset}, year = {2004}, doi = https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf, howpublished = {\\url{https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf}}, note = {Accessed: YYYY-MM-DD} % Optional: date accessed}"
+  #     description: ""
+  limitations: |
+    <i>APA style:</i> <br>ILO et al (2004) Turvey Dataset [Data set]. Consumer Price Index manual: theory and practice. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf<br>
+    <br>
+    <i>Chicago style</i><br>ILO et al "Turvey Dataset". Consumer Price Index manual: theory and practice (2004). https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf<br>
+    <br>
+    <i>Bibtex citation</i><br><a href='https:URL'>Click here for raw form</a>
+
+  usage: |
+    Open dataset, publicly shared by ILO et al (2004) CPI manual
+
+    <br><br>
+    <b>Links to dataset:</b><br>
+    <ul>
+      <li><a href='https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf' target='_blank'>PDF version of dataset</a><br></li>
+      <li><a href='https://github.com/StatisticsNZ/multilateral/raw/master/data/turvey.RData' target='_blank'>Rdata version of dataset</a></li>
+    </ul>
+    <br>
+    
+  # TO DO: review and test later. Commented out as this does not render by datacontract-cli with the current version
+  # authoritativeDefinitions: 
+  #   - type: "PDF version of dataset"
+  #     url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "CPI Manual version"
+    # - type: "Rdata version of dataset"
+    #   url: "https://www.test.com"
+    #   description: "https://github.com/StatisticsNZ/multilateral/raw/master/data/turvey.RData"
+domain: "Consumer Price Statistics"
+tenant: "International Labour Organization (ILO)"
+tags:
+  - "field-or-sample"
+  - "groceries-and-food"
+schema:
+  - name: "Dataset"
+    businessName: "File"
+    description: "The full dataset that includes all 5 commodities and 4 years, containing 176 rows and 4 variables. Dataset omits records where no sales occurred."
+    type: "file"
+    properties:
+      - name: "month"
+        logicalType: "object"
+        description: "Date, ISO format representing last day of each month. <br>Example: 1970-01-31"
+        properties: []
+        examples:
+          - "1970-01-31"
+        businessName: "Reference period"
+      - name: "commodity"
+        logicalType: "object"
+        description: "The seasonal product, as a factor (Apples, Grapes, Oranges, Peaches, Strawberries). <br>Example: Apples"
+        examples:
+          - "Apples"
+        businessName: "Product category"
+      - name: "price"
+        logicalType: "number"
+        description: "The price of the commodity for the month in question. <br>Example: 1.14"
+        examples:
+          - "1.14"
+        businessName: "Product price"
+      - name: "quantity"
+        logicalType: "integer"
+        description: "The quantity sold of the commodity for the month in question. <br>Example: 3086"
+        examples:
+          - "3086"
+        businessName: "Quantity of product sold"
