@@ -1,80 +1,65 @@
-dataContractSpecification: 1.1.0
-id: turvey-dataset
-info:
-  title: Modified Turvey Dataset
-  version: '3.0'
-  description: '
-  Modified version of an original dataset created by Ralph Turvey in 1979. <a href="https://webapps.ilo.org/public/libdoc/ilo/P/09606/09606(1979-4)XIII-XXIII.pdf">Turvey (1979)</a> shared an artificial dataset for 5 seasonal commodities over 4 years. The original dataset was modified twice. This is the version most commonly used, as taken from the <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf">ILO et al (2004) CPI Manual: Theory and Practice</a>.
-  '
-  owner: ILO
-
-terms:
- usage: '
- Open dataset, publicly shared by ILO et al (2004) CPI manual
- 
- <b>Cite as:</b><br>
-  <u>APA</u>:<br>
-  ILO et al (2004) Turvey Dataset [Data set]. Consumer Price Index manual: theory and practice. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf
-  <br><br>
-  <u>Chicago</u>:<br> 
-  ILO et al "Turvey Dataset". Consumer Price Index manual: theory and practice (2004). https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf
-  <br><br>
-  <u>BibTeX</u>:
-  <pre>
-    @misc{turvey_dataset,<br>
-      author = {ILO},<br>
-      title = {Turvey Dataset},<br>
-      year = {2004},<br>
-      doi = https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf,<br>
-      howpublished = {\url{https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf}},<br>
-      note = {Accessed: YYYY-MM-DD} % Optional: date accessed <br>
-    }<br>
-  </pre>
-  '
-
-
-models:
-  dataset: 
-    description: The full dataset that includes all 5 commodities and 4 years, containing 176 rows and 4 variables. Dataset omits records where no sales occurred.
-    type: table
-    fields:
-      month:
-        type: object
-        description: Date, ISO format representing last day of each month
-        example: '1970-01-31'
-        primary: false
-      commodity:
-        type: object
-        description: The seasonal product, as a factor (Apples, Grapes, Oranges, Peaches, Strawberries)
-        example: 'Apples'
-        primary: false
-      price:
-        type: float
-        description: The price of the commodity for the month in question
-        example: '1.14'
-        primary: false
-      quantity:
-        type: integer
-        description: The quantity sold of the commodity for the month in question
-        example: '3086'
-examples:
-- type: csv
-  description: An example first 5 rows of the dataset.
-  data: 'month,commodity,price,quantity
-
-    1970-01-31,Apples,1.14,3086
-
-    1970-01-31,Grapes,2.48,82
-
-    1970-01-31,Oranges,1.3,10266
-
-    1970-02-28,Apples,1.17,3765
-
-    1970-02-28,Grapes,2.75,35
-    '
-links:
-  Dataset-p395: https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf
+apiVersion: "v3.1.0"
+kind: "DataContract"
+id: "modified-turvey"
+version: "1.0"
+status: "in development"
+name: "Modified Turvey Dataset"
+description:
+  purpose: "Modified version of an original dataset created by Ralph Turvey in 1979. Turvey (1979) shared an artificial dataset for 5 seasonal commodities over 4 years. The original dataset was modified twice. This is the version most commonly used, as taken from the ILO et al (2004) CPI Manual: Theory and Practice. "
+  customProperties:
+    - property: "APA Citation"
+      value: "ILO et al (2004) Turvey Dataset [Data set]. Consumer Price Index manual: theory and practice. https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+      description: "How to cite this dataset using APA style"
+    - property: "Chicago Citation"
+      value: "ILO et al \"Turvey Dataset\". Consumer Price Index manual: theory and practice (2004). https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+      description: "How to cite this dataset using Chicago style"
+    - property: "Bibtex citation"
+      value: "@misc{turvey_dataset,author = {ILO}, title= {Turvey Dataset}, year = {2004}, doi = https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf, howpublished = {\\url{https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf}}, note = {Accessed: YYYY-MM-DD} % Optional: date accessed}"
+      description: ""
+    - property: ""
+      value: ""
+      description: ""
+  limitations: "None"
+  usage: "Open dataset, publicly shared by ILO et al (2004) CPI manual"
+  authoritativeDefinitions:
+    - type: "PDF version of dataset"
+      url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+      description: "CPI Manual version"
+    - type: "Rdata version of dataset"
+      url: "https://www.test.com"
+      description: "https://github.com/StatisticsNZ/multilateral/raw/master/data/turvey.RData"
+domain: "Consumer Price S tatistics"
+tenant: "International Labour Organization (ILO)"
 tags:
-- seasonal-dataset
+  - "field-or-sample"
+  - "groceries-and-food"
+schema:
+  - name: "Dataset"
+    businessName: ""
+    description: "The full dataset that includes all 5 commodities and 4 years, containing 176 rows and 4 variables. Dataset omits records where no sales occurred."
+    type: "object"
+    properties:
+      - name: "month"
+        logicalType: "object"
+        description: |-
 
-
+          Date, ISO format representing last day of each month
+        properties: []
+        examples:
+          - "1970-01-31"
+      - name: "commodity"
+        logicalType: "object"
+        description: "The seasonal product, as a factor (Apples, Grapes, Oranges, Peaches, Strawberries)"
+        examples:
+          - "Apples"
+      - name: "price"
+        logicalType: "number"
+        description: "The price of the commodity for the month in question"
+        examples:
+          - "1.14"
+      - name: "quantity"
+        logicalType: "integer"
+        description: "The quantity sold of the commodity for the month in question"
+        examples:
+          - "3086"
+servers: null
