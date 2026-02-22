@@ -21,7 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install datacontract-cli
-          pip install beautifulsoup4 >= 4.14
+          pip install beautifulsoup4
           
       # change directory first and then output to a site folder
       - name: create catalog
