@@ -89,4 +89,4 @@ if __name__ == "__main__":
     files = os.listdir('_site/')
     files.remove('index.html')
     for file in files:
-        update_dataset('_site/'+file)
+        update_dataset('_site/datasets/'+file)

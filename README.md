@@ -55,3 +55,11 @@ We are exploring the use of [data contract cli](https://cli.datacontract.com/) a
 ## Who are we?
 
 This catalogue is maintained by the reproducibility project team (which is a workstream of the UN Task Team for Scanner data). [Read more about us here](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/about.html).
+
+## Config
+
+To run this locally, install datacontract-cli and run:
+
+> datacontract catalog --files "datasets/*.odcs.yaml" --output _site
+
+The `post-processing.py` executes afterwards to clean the html files
