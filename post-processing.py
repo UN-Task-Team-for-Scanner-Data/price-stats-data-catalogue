@@ -48,12 +48,14 @@ def update_dataset(_path):
     - fix reference to the project
     """
     # Open and read the HTML file
-    with open(_path, 'r') as file:
+    with open(_path, 'r', encoding='utf-8') as file:
         html_content = file.read()
-    soup = BeautifulSoup(html_content, 'html.parser')
+    soup = BeautifulSoup(html_content, 'html5lib')
 
-    # Update the html title from data contract to datsaet
-    soup.title.string = 'Price Stats Dataset'
+    # Update the html title from data contract to dataset name
+    dataset_name = soup.find('dd', class_="mt-1 text-sm text-gray-700")
+    print(dataset_name.string)
+    soup.title.string = 'Catalogue:' + dataset_name.string
 
     # Change the main text
     h2_tag_main_title = soup.find('h2', class_="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight")
@@ -71,21 +73,27 @@ def update_dataset(_path):
     a_tag_top_right.string = 'Price Statistics Reproducibility Project'
     a_tag_top_right['href'] = "https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/"
 
-    # Replace referneces of 'data contract' as small grey text next to big sections - may get confusing
-    p_tags = soup.find_all("p", class_="text-sm text-gray-500")
-    for p_tag in p_tags:
-        if 'data contract' in p_tag.string:
-            old_string = p_tag.string
-            p_tag.string = old_string.replace("data contract", "dataset")
-            print(p_tag.string)
+    # Change limitation to citation as I'm reusing that section
+    subheading_tag = soup.find_all('dt', class_="text-sm font-medium text-gray-900")
+    # This class is used for all subheadings, so loop through them to find the one needed
+    for tag in subheading_tag:
+        # print(tag.string)
+        if 'Limitation' in tag.string:
+            tag.string = 'How to cite'
+    
+    # Add css to make links appear blue and underlined
+    css_rules = "a { color: #0000FF !important; }"
+    style_tag = soup.new_tag("style")
+    style_tag.string = css_rules
+    soup.head.append(style_tag)
 
     # Save the modified HTML back to the file
-    with open(_path, 'w') as file:
+    with open(_path, 'w', encoding='utf-8') as file:
         file.write(str(soup))
 
 
 if __name__ == "__main__":
-    update_index()
+    # update_index()
     datasets = os.listdir('_site/datasets')
     for dataset in datasets:
         update_dataset('_site/datasets/'+dataset)
