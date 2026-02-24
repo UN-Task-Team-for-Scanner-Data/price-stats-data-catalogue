@@ -93,7 +93,7 @@ def update_dataset(_path):
 
 
 if __name__ == "__main__":
-    # update_index()
+    update_index()
     datasets = os.listdir('_site/datasets')
     for dataset in datasets:
         update_dataset('_site/datasets/'+dataset)

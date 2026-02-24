@@ -1,0 +1,105 @@
+apiVersion: "v3.1.0"
+kind: "DataContract"
+id: "polish-rice-sugar-milk"
+version: "1.0"
+status: "<b>Draft</b><br><a href='https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html#maturity-model'>Target documentation level</a>: 3"
+name: "Polish scanner rice, sugar and milk products"
+description:
+  purpose: |
+    This is a collection of scanner data on the sale of rice, sugar and milk products in one of Polish supermarkets in the period from December 2024 to January 2026. Data was collected by Statistics Poland. 
+    <br><br>
+    Note: When opening the dataset, skip the index column and use ";" as a separator. For example:
+    Using Python: pd.read_csv("https://zenodo.org/records/18342253/files/dataRSM.csv?download=1", sep=";", index_col=False)
+  limitations: |
+    <i>APA style:</i> <br>Białek, J. (2026). A real scanner data set on sold rice, sugar and milk products (Version 1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.18342253<br>
+    <br>
+    <i>Chicago style</i><br>Białek, Jacek. "A Real Scanner Data Set on Sold Rice, Sugar and Milk Products". Zenodo, January 21, 2026. https://doi.org/10.5281/zenodo.18342253.<br>
+    <br>
+    <i>Bibtex citation</i><br><a href='https://raw.githubusercontent.com/UN-Task-Team-for-Scanner-Data/price-stats-data-catalogue/main/bitex/polish-rice-sugar-milk.bib'>Click here for raw form</a>
+  usage: |
+    Open dataset, shared under "Creative Commons Attribution 4.0 International" licence on Zenodo.
+
+    <br><br>
+    <b>Links:</b><br>
+    <ul>
+      <li>Dataset: <a href='https://doi.org/10.5281/zenodo.18342253'>https://doi.org/10.5281/zenodo.18342253</a></li>
+    </ul>
+  # TO DO: review and test later. Commented out as this does not render by datacontract-cli with the current version
+  # authoritativeDefinitions: 
+  #   - type: "Dataset zenodo record"
+  #     url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "CPI Manual version"
+domain: "Consumer Price Statistics"
+tenant: "<a href='https://orcid.org/0000-0002-0952-5327'>Białek, Jacek (Data manager)</a>"
+tags:
+  - "scanner"
+  - "groceries-and-food"
+schema:
+  - name: "Dataset"
+    businessName: ""
+    description: ""
+    type: "object"
+    properties:
+      - name: "time"
+        logicalType: "object"
+        description: |
+          Dates of transactions (Year-Month-Day). <br>Example: '2024-12-21'
+        examples:
+          - "2024-12-21"
+        businessName: "Transaction date"
+      - name: "prices"
+        logicalType: "object"
+        description: |
+           Prices (unit values) of sold products [PLN].<br>Example: '3,05'
+        examples:
+          - "3,05"
+        businessName: "Unit price"
+      - name: "quantities"
+        logicalType: "object"
+        description: |
+          Quantities of sold products [items]. <br>Example: '243'
+        examples:
+          - "243"
+        businessName: "Quantity sold"
+      - name: "retID"
+        logicalType: "object"
+        description: |
+          Unique codes identifying outlets/retailer sale points (data set contains 4 different retIDs). <br>Example: '02-936'
+        examples:
+          - "02-936"
+        businessName: "Retailer ID"
+      - name: "description"
+        logicalType: "object"
+        description: |
+          Descriptions (labels) of sold products (data set contains 152 different descriptions in Polish). <br>Example: 'ryż biały 4x100g pp'
+        examples:
+          - "ryż biały 4x100g pp"
+        businessName: "Product description"
+      - name: "retailer_code"
+        logicalType: "object"
+        description: |
+          Retailer codes for product definition (134 retailer codes). <br>Example: '246359'
+        examples:
+          - "246359"
+        businessName: "Product code"
+      - name: "EAN_code"
+        logicalType: "object"
+        description: |
+          EAN codes (bar codes) for product definition (138 EAN codes). <br>Example: '5904215121565'
+        examples:
+          - "5904215121565"
+        businessName: "EAN code"
+      - name: "category"
+        logicalType: "object"
+        description: |
+          Product categories at the 6-digit COICOP level (4 categories in English). <br>Example: 'RICE'
+        examples:
+          - "RICE"
+        businessName: "Product category"
+      - name: "subcategory"
+        logicalType: "object"
+        description: |
+          Product subcategories from 7-digit COICOP level (11 subcategories in English). <br>Example: 'white rice'
+        examples:
+          - "white rice"
+        businessName: "Product subcategory"
