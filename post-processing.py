@@ -55,7 +55,7 @@ def update_dataset(_path):
     # Update the html title from data contract to dataset name
     dataset_name = soup.find('dd', class_="mt-1 text-sm text-gray-700")
     print(dataset_name.string)
-    soup.title.string = 'Catalogue:' + dataset_name.string
+    soup.title.string = dataset_name.string
 
     # Change the main text
     h2_tag_main_title = soup.find('h2', class_="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight")

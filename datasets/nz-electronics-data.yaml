@@ -1,148 +1,139 @@
-dataContractSpecification: 1.1.0
-id: nz-electronics-modified-dataset
-info:
-  title: Modified Electronics NZ dataset
-  version: '1.0'
-  description: |
+apiVersion: "v3.1.0"
+kind: "DataContract"
+id: "nz-electronics-modified"
+version: "1.0"
+status: "<b>Draft</b><br><a href='https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html#maturity-model'>Target documentation level</a>: 2"
+name: "New Zealand Electronics Modified Dataset"
+description:
+  purpose: |
     A modified dataset that was based on real scanner data obtained from GfK. The dataset contains sales (both quanitity and total sales) by month for 459 unique products in a single consumer electronic category for a total of 26 months (2017-01-01 to 2019-02-01). The dataset includes 11 different quality chacacteristics (all are obfuscated to hide their true values). Distribution of quality characteristis and their relationships to quality adjustment was maintained during the modification process.<br>
     <br>
     Dataset facilitates evaluation of quality adjustment methods with scanner data.
-  owner: Frances Krsinch
-  contact:
-   name: Frances Krsinch
-   email: frances.krsinich@gmail.com 
+  limitations: |
+    <i>APA style:</i> <br>TBC<br>
+    <br>
+    <i>Chicago style</i><br>TBC<br>
+    <br>
+    <i>Bibtex citation</i><br><a href='https://URL'>Click here for raw form</a>
+  usage: |
+    Open dataset, shared under "GNU General Public License" by StatisticsNZ.
 
-
-### terms
-
-terms:
- usage: '
-  Open dataset initially shared for research purposes on the UN Global Platform GitLab. Version referenced here is cleaned and uploaded to Zenodo.
-  <br><br>
-  <b>Cite as:</b><br>
-  <u>APA</u>:<br>
-  TBC
-  <br><br>
-  <u>Chicago</u>:<br> 
-  TBC
-  <br><br>
-  <u>BibTeX</u>:<br>
-  <pre>
-    @dataset{nz-modified-scanner-dataset,<br>
-      author = {Frances Krsinich},<br
-      title = {Modified Electronics NZ dataset},<br>
-      year = {2019},<br>
-      doi = https://doi.org/XXXXX,<br>
-      howpublished = {\url{XXXX}},<br>
-      note = {Accessed: YYYY-MM-DD} % Optional: date accessed <br>
-    } <br>
-  </pre>
-  '
-
-### models
-
-models:
-  dataset: 
-    description: The dataset is in one file.
-    type: table
-    fields:
-      MONTH_NUM:
-        type: object
-        description: Data month number (1-26) representing the sales month starting from January 2017, ISO standard YYYY-MM-DD followed (day of the month is always first).
-        example: '2017-01-01'
-        primaryKey: true
-        tags: ["business-timestamp"]
-      PRODID_NUM:
-        type: int
-        description: 'Dintinct product identifier number assigned during modification process to simulate a product ID (such as GTIN).<br>
+    <br><br>
+    <b>Links:</b><br>
+    <ul>
+      <li>CSV version of the dataset: <a href='https://code.officialstatistics.org/scanner-task-team-gwg/FEWS_package/-/raw/master/data/SampleDataSet.csv'>See FEWS package (on the UN Global Platform GitLab)</a></li>
+      <li>Rdata version of the dataset: <a href='https://github.com/StatisticsNZ/multilateral/blob/master/data/synthetic_gfk.RData'>See StatisticsNZ Multilateral package</a></li>
+    </ul>
+  # TO DO: review and test later. Commented out as this does not render by datacontract-cli with the current version
+  # authoritativeDefinitions: 
+  #   - type: "Dataset zenodo record"
+  #     url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "CPI Manual version"
+domain: "Consumer Price Statistics"
+tenant: "StatisticsNZ"
+tags:
+  - "scanner"
+  - "electronics-and-applicances"
+schema:
+  - name: "Dataset"
+    businessName: ""
+    description: |
+      The orginal dataset was modified to be published and variable names were obfuscated. prodid_num was a unique identifier to each unique product. Several variables were dropped when the synthetic dataset was published however, resulting in some rows having the same prodid_num and same quality characteristics but different quantities or values. Recommend to groupby to use the data.
+    type: "object"
+    properties:
+      - name: "month_num"
+        logicalType: "object"
+        description: |
+          Data month number (1-26) representing the sales month starting from January 2017, ISO standard YYYY-MM-DD followed (day of the month is always first). <br>Example: '2017-01-01'
+        examples:
+          - "2017-01-01"
+        businessName: "Reporting month"
+      - name: "prodid_num"
+        logicalType: "number"
+        description: "Distinct product identifier number assigned during modification process to simulate a product ID (such as GTIN).<br>
           <br>
           There are total of 459 unique products in the dataset.
-          '
-        example: '3'
-        primaryKey: true
-        quality:
-          - type: text
-            description: There are times when prodid_num (and all other quality characteristics) repeat in the month. This is due to other variables that separted those products being ommitted during the data modification process and product ids were assigned at the end. Recommend to groupby to use the data.
-      CHAR1:
-        type: float
-        description: Modified quality characteristic 1 (obfuscated to hide true value).
-        example: '10.6'
-      CHAR2:
-        type: int
-        description: Modified quality characteristic 2 (obfuscated to hide true value).
-        example: '16006'
-      CHAR2:
-        type: int
-        description: Modified quality characteristic 2 (obfuscated to hide true value).
-        example: '16006'
-      CHAR3:
-        type: object
-        description: Modified quality characteristic 3 (obfuscated to hide true value).
-        example: 'val_w'
-      CHAR4:
-        type: object
-        description: Modified quality characteristic 4 (obfuscated to hide true value).
-        example: 'val_a'
-      CHAR5:
-        type: object
-        description: Modified quality characteristic 5 (obfuscated to hide true value).
-        example: 'val_a'
-      CHAR6:
-        type: object
-        description: Modified quality characteristic 6 (obfuscated to hide true value).
-        example: 'PRG566'
-      CHAR7:
-        type: object
-        description: Modified quality characteristic 7 (obfuscated to hide true value).
-        example: 'CCC'
-      CHAR8:
-        type: object
-        description: Modified quality characteristic 8 (obfuscated to hide true value).
-        example: '150D'
-      CHAR9:
-        type: object
-        description: Modified quality characteristic 9 (obfuscated to hide true value).
-        example: 'B230'
-      CHAR10:
-        type: object
-        description: Modified quality characteristic 10 (obfuscated to hide true value).
-        example: 'ted'
-      CHAR11:
-        type: object
-        description: Modified quality characteristic 11 (obfuscated to hide true value). Represents the brand of the product.
-        example: 'brand_a'
-      QUANTITY:
-        type: int
-        description: Quantity of products sold during the period (month).
-        example: '280'
-      VALUE:
-        type: float
-        description: The total sales of products sold during the period (month) in New Zealand dollars (NZD), could also be referred to as turnover.<br>
-        example: '196420'
-      UNIT_PRICE:
-        type: float
-        description: The unit price of the product during the period (month) in New Zealand dollars (NZD), calculated as VALUE divided by QUANTITY.<br>
-        example: '701.5'
-    primaryKey: ["PRODID_NUM", "MONTH_NUM"]
-examples:
-- type: csv
-  description: An example first 5 rows of the dataset.
-  data: 'month_num,prodid_num,char11,char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,quantity,value,unit_price
-
-  2017-01-01,3,brand_a,10.6,16006,val_w,val_a,val_a,PRG566,CCC,150D,B230,ted,280,196420,701.5
-
-  2017-01-01,8,brand_a,10.6,3718,val_i,val_a,val_a,PRG566,AAA,100M,B230,cuy,973,360137,370.1305241521069
-
-  2017-01-01,12,brand_a,10.6,3718,val_u,val_a,val_e,FBOK6552,AAA,100M,B230,cuy,68,24506,360.38235294117646
-
-  2017-01-01,19,brand_a,10.6,7814,val_i,val_a,val_a,PRG566,CCC,150D,B230,ted,181,117971,651.7734806629834
-
-  2017-01-01,34,brand_a,11.3,16006,val_n,val_a,val_a,GR4400,AAA,100M,B230,ted,2,3701,1850.5
-    '
-links:
-  Dataset-as-csv: https://code.officialstatistics.org/scanner-task-team-gwg/FEWS_package/-/raw/master/data/SampleDataSet.csv
-  Dataset-as-Rdata: https://github.com/StatisticsNZ/multilateral/blob/master/data/synthetic_gfk.RData
-  R-documentation-summary-of-dataset: https://www.rdocumentation.org/packages/multilateral/versions/1.0.0/topics/synthetic_gfk
-tags:
-- scanner-dataset
-- electronics-and-applicances
+          <br><br>
+          Note on data quality: There are times when prodid_num (and all other quality characteristics) repeat in the month. This is due to other variables that separted those products being ommitted during the data modification process and product ids were assigned at the end. Recommend to groupby to use the data.
+          "
+        examples:
+          - "3"
+        businessName: "Product identifier"
+      - name: "char1"
+        logicalType: "number" 
+        description: "Modified quality characteristic 1 (obfuscated to hide true value). <br>Example: '10.6'"
+        examples:
+          - "10.6"
+        businessName: "Quality characteristic 1"
+      - name: "char2"
+        logicalType: "number"
+        description: "Modified quality characteristic 2 (obfuscated to hide true value). <br>Example: '16006'"
+        examples:
+          - "16006"
+        businessName: "Quality characteristic 2"
+      - name: "char3"
+        logicalType: "object" 
+        description: "Modified quality characteristic 3 (obfuscated to hide true value). <br>Example: 'val_w'"
+        examples:
+          - "val_w"
+        businessName: "Quality characteristic 3"
+      - name: "char4"
+        logicalType: "object"
+        description: "Modified quality characteristic 4 (obfuscated to hide true value). <br>Example: 'val_a'"
+        examples:
+          - "val_a"
+        businessName: "Quality characteristic 4"
+      - name: "char5"
+        logicalType: "object"
+        description: "Modified quality characteristic 5 (obfuscated to hide true value). <br>Example: 'val_a"
+        examples:
+          - "val_a"
+        businessName: "Quality characteristic 5"
+      - name: "char6"
+        logicalType: "object"
+        description: "Modified quality characteristic 6 (obfuscated to hide true value). <br>Example: 'PRG566'"
+        examples:
+          - "PRG566"
+        businessName: "Quality characteristic 6"
+      - name: "char7"
+        logicalType: "object"
+        description: "Modified quality characteristic 7 (obfuscated to hide true value). <br>Example: 'CCC'"
+        examples:
+          - "CCC"
+        businessName: "Quality characteristic 7"
+      - name: "char8"
+        logicalType: "object"
+        description: "Modified quality characteristic 8 (obfuscated to hide true value). <br>Example: '150D'"
+        examples:
+          - "150D"
+        businessName: "Quality characteristic 8"
+      - name: "char9"
+        logicalType: "object"
+        description: "Modified quality characteristic 9 (obfuscated to hide true value). <br>Example: 'B230'"
+        examples:
+          - "B230"
+        businessName: "Quality characteristic 9"
+      - name: "char10" 
+        logicalType: "object"
+        description: "Modified quality characteristic 10 (obfuscated to hide true value). <br>Example: 'ted'"
+        examples:
+          - "ted"
+        businessName: "Quality characteristic 10"
+      - name: "char11"
+        logicalType: "object"
+        description: "Modified quality characteristic 11 (obfuscated to hide true value). Represents the brand of the product. <br>Example: 'brand_a'"
+        examples:
+          - "brand_a"
+        businessName: "Brand"
+      - name: "quantity"
+        logicalType: "number"
+        description: "Quantity of products sold during the period (month). <br>Example: '280'"
+        examples:
+          - "280"
+        businessName: "Quantity"
+      - name: "value"
+        logicalType: "number"
+        description: "The total sales of products sold during the period (month) in New Zealand dollars (NZD), could also be referred to as turnover. <br>Example: '196420'"
+        examples:
+          - "196420"
+        businessName: "Total sales"
