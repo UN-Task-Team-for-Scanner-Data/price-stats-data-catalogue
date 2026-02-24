@@ -1,111 +1,223 @@
-dataContractSpecification: 1.1.0
-id: dominicks-scanner-dataset
-info:
-  title: Dominicks finer foods scanner dataset
-  version: '1.0'
-  description: A dataset made up of 9 years of transaction (scanner) data for 26 different categories in 100 stores sold by Dominick's finer foods (a now defunct retailer in Chicago in the 90s).
-  owner: Chicago Booth School of Business
-  contact:
-   name: Chicago Booth School of Business
-   url: https://www.chicagobooth.edu/research/kilts/research-data/dominicks
-#    email:
+apiVersion: "v3.1.0"
+kind: "DataContract"
+id: "dominicks-scanner"
+version: "1.0"
+status: "<b>Draft</b><br><a href='https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html#maturity-model'>Target documentation level</a>: 2"
+name: "Dominicks Finer Foods scanner dataset"
+description:
+  purpose: |
+    A dataset made up of 9 years of transaction (scanner) data for 26 different categories in 100 stores sold by Dominick's finer foods (a now defunct retailer in Chicago in the 90s).
+  limitations: |
+    <i>APA style:</i> <br>Kilts Center for Marketing (2013), Dominick's Data Manual, Chicago<br>
+    <br>
+    <i>Chicago style</i><br>TBC<br>
+    <br>
+    <i>Bibtex citation</i><br><a href='https://URL'>Click here for raw form</a>
+  usage: |
+    Open dataset on seasonal products shared by Chicago Booth School Kilts Center for Marketing
 
-
-### terms
-
-terms:
- usage: '
-  Open dataset on seasonal products shared by Chicago Booth School Kilts Center for Marketing
-  <br><br>
-  <b>Cite as:</b><br>
-  <u>APA</u>:<br>
-  TBC
-  <br><br>
-  <u>Chicago</u>:<br> 
-  TBC
-  <br><br>
-  <u>BibTeX</u>:<br>
-  <pre>
-    @misc{dominiks_dataset,<br>
-      author = {Chicago Booth School},<br>
-      title = {Dominicks Finer Foods Dataset},<br>
-      year = {2022},<br>
-      doi = https://doi.org/10.2785/873932,<br>
-      howpublished = {\url{https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/e52b1b37-38f3-4f2d-82be-14b005da1ce3/details}},<br>
-      note = {Accessed: YYYY-MM-DD} % Optional: date accessed <br>
-    } <br>
-  </pre>
-  '
-
-
-
-### models
-
-models:
-  movement: 
-    description: The movement (or turnover) data. Schema identical but this is provided separately for each of the 26 categories.
-    type: table
-    fields:
-      STORE:
-        type: int
-        description: Store number (references store data on https://github.com/eurostat/dff/blob/master/CSV/stores.csv)
-        example: '76'
-        primary: true
-      UPC:
-        type: bigint
-        description: Universal Product Code for sold product
-        example: '1192603016'
-        primary: true
-      WEEK:
-        type: int
-        description: Week number representing the sales (references weeks data on https://github.com/eurostat/dff/blob/master/CSV/weeks.csv)
-        example: '306'
-        primary: true
-      MOVE:
-        type: int
-        description: Number of units sold
-        example: '1'
-      QTY:
-        type: int
-        description: Quantity of products sold
-        example: '1'
-      PRICE:
-        type: float
-        description: Price a product (i.e. the UPC) was sold for
-        example: '2.99'
-      SALES:
-        type: float
-        description: Derived variable for sales per UPC (SALES = PRICE x MOVE / QTY)
-        example: '2.99'
-  upc:
-    description: List of unique products (tracked by UPC) sold by category
-    type: table
-    fields:
-      UPC:
-        type: bigint
-        description: Universal Product Code for sold product
-        example: '1192603016'
-        primary: true
-      DESCRIP:
-        type: text
-        description: Description of the product (i.e. the UPC)
-        example: 'CAFFEDRINE CAPLETS 1'
-      NITEM:
-        type: bigint
-        description: Item code (attempt at tracking products across multiple UPCs)
-        example: '7342431'
-      COM_CODE:
-        type: int
-        description: Commodity code (Dominick's version of categories). Lower granularity that each category file, hence one file may have more than one COM_CODE
-        example: '953'
-      SIZE:
-        type: bigint
-        description: Size of the product
-        example: '16 CT'
-
-links:
-  Dataset-page: https://www.chicagobooth.edu/research/kilts/research-data/dominicks
-  Manual: https://www.chicagobooth.edu/-/media/enterprise/centers/kilts/datasets/dominicks-dataset/dominicks-manual-and-codebook_kiltscenter
-  Mehrhoff-paper: https://stats.unece.org/ottawagroup/download/f577.pdf
+    <br><br>
+    <b>Link to dataset:</b><br>
+    <ul>
+      <li>Dataset site (see "Category Specific Files" section): <a href='https://www.chicagobooth.edu/research/kilts/research-data/dominicks'>https://www.chicagobooth.edu/research/kilts/research-data/dominicks</a></li>
+      <li>Dataset paper: <a href='https://stats.unece.org/ottawagroup/download/f577.pdf'>Mehrhoff (2018) Promoting the use of a publically available scanner data set in price index research and for capacity building</a></li>
+      <li>Data Manual: <a href='https://www.chicagobooth.edu/-/media/enterprise/centers/kilts/datasets/dominicks-dataset/dominicks-manual-and-codebook_kiltscenter' target='_blank'>Dominick's Data Manual</a></li>
+    </ul>
+  # TO DO: review and test later. Commented out as this does not render by datacontract-cli with the current version
+  # authoritativeDefinitions: 
+  #   - type: "Dataset zenodo record"
+  #     url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "CPI Manual version"
+domain: "Consumer Price Statistics"
+tenant: "<a href='https://www.chicagobooth.edu/research/kilts/research-data/dominicks' target='_blank'>Chicago Booth School of Business</a>"
 tags:
-- scanner-dataset
+  - "scanner"
+  - "groceries-and-food"
+schema:
+  - name: "movement"
+    businessName: ""
+    description: "The movement (or turnover) data. Schema identical but this is provided separately for each of the 26 categories."
+    type: "object"
+    properties:
+      - name: "store"
+        logicalType: "integer"
+        description: |-
+          Store number (references store data on https://github.com/eurostat/dff/blob/master/CSV/stores.csv)|
+          Example: 76
+        businessName: "Outlet id"
+        examples:
+          - "76"
+        relationships:
+          - type: "foreignKey"
+            to: "stores.store"
+            description: ""
+      - name: "upc"
+        logicalType: "number"
+        description: "Universal Product Code for sold product"
+        examples:
+          - "1192603016"
+        businessName: "Product ID"
+        relationships:
+          - type: "foreignKey"
+            to: "upc.upc"
+            description: ""
+      - name: "week"
+        logicalType: "integer"
+        description: "Week number representing the sales (references weeks data on https://github.com/eurostat/dff/blob/master/CSV/weeks.csv)"
+        examples:
+          - "306"
+        businessName: "Sales week"
+        relationships:
+          - type: "foreignKey"
+            to: "weeks.week_num"
+            description: ""
+      - name: "move"
+        logicalType: "integer"
+        description: "Number of units sold"
+        examples:
+          - "1"
+        businessName: "Quantity sold"
+      - name: "qty"
+        logicalType: "integer"
+        description: "Quantity of products sold"
+        examples:
+          - "1"
+        businessName: "Quantity sold"
+      - name: "price"
+        logicalType: "number"
+        description: "Price a product (i.e. the UPC) was sold for"
+        examples:
+          - "2.99"
+        businessName: "Product price"
+      - name: "sales"
+        logicalType: "number"
+        description: "Derived variable for sales per UPC (SALES = PRICE x MOVE / QTY)"
+        examples:
+          - "2.99"
+        businessName: "Product sales"
+      - name: "profit"
+        logicalType: "number"
+        description: "Profit per UPC (PROFIT = SALES - COST)"
+        examples:
+          - "2.99"
+        businessName: "Product profit"
+      - name: "sale"
+        logicalType: "number"
+        description: "Sale value per UPC (SALE = PRICE x MOVE)"
+        examples:
+          - "2.99"
+        businessName: "Product sale"
+      - name: "ok"
+        logicalType: "integer"
+        description: "Flag indicating if the record is valid (1) or not (0)"
+        examples:
+          - "1"
+        businessName: "Valid record flag"
+  - name: "upc"
+    businessName: ""
+    description: "List of unique products (tracked by UPC) sold by category"
+    type: "object"
+    properties:
+      - name: "upc"
+        logicalType: "number"
+        description: "Universal Product Code for sold product"
+        examples:
+          - "1192603016"
+        businessName: "Product ID"
+      - name: "com_code"
+        logicalType: "integer"
+        description: "Commodity code (Dominick's version of categories). Lower granularity that each category file, hence one file may have more than one COM_CODE"
+        examples:
+          - "953"
+        businessName: "Commodity code"
+      - name: "nitem"
+        logicalType: "integer"
+        description: "Item code (attempt at tracking products across multiple UPCs)"
+        examples:
+          - "7342431"
+        businessName: "Item code"
+      - name: "descrip"
+        logicalType: "string"
+        description: "Description of the product (i.e. the UPC)"
+        examples:
+          - "CAFFEDRINE CAPLETS 1"
+        businessName: "Product description"
+      - name: "size"
+        logicalType: "string"
+        description: "Size of the product"
+        examples:
+          - "100 CT"
+        businessName: "Product size"
+      - name: "case"
+        logicalType: "integer"
+        description: "Case number (i.e. the number of products in a case)"
+        examples:
+          - "16 CT"
+        businessName: "Case number"
+  - name: "stores"
+    businessName: ""
+    description: "Retailer outlets"
+    type: "object"
+    properties:
+      - name: "store"
+        logicalType: "integer"
+        description: "Store id (references store data on https://github.com/eurostat/dff/blob/master/CSV/stores.csv)"
+        examples:
+          - "2"
+        businessName: "Outlet id"
+      - name: "city"
+        logicalType: "string"
+        description: "City where the store is located"
+        examples:
+          - "River Forest"
+        businessName: "Store city"
+      - name: "price_tier"
+        logicalType: "integer"
+        description: "Price tier of the store"
+        examples:
+          - "1"
+        businessName: "Price tier"
+      - name: "zone"
+        logicalType: "integer"
+        description: "Zone of the store"
+        examples:
+          - "1"
+        businessName: "Store zone"
+      - name: "zip_code"
+        logicalType: "integer"
+        description: "Zip code of the store"
+        examples:
+          - "60302"
+        businessName: "Store zip code"
+      - name: "address"
+        logicalType: "string"
+        description: "Address of the store"
+        examples:
+          - "7501 W. North Ave"
+  - name: "weeks"
+    businessName: ""
+    description: "Week definition file"
+    type: "object"
+    properties:
+      - name: "week_num"
+        logicalType: "integer"
+        description: "Week number representing the sales (references weeks data on https://github.com/eurostat/dff/blob/master/CSV/weeks.csv)"
+        examples:
+          - "1"
+        businessName: "Sales week"
+      - name: "start"
+        logicalType: "object"
+        description: "Pricing week started on date, MM/DD/YY format"
+        examples:
+          - "10/26/89"
+      - name: "end"
+        logicalType: "object"
+        description: "Pricing week ended on date, MM/DD/YY format"
+        examples:
+          - "11/01/89"
+      - name: "special_events"
+        logicalType: "string"
+        description: "Special events that occurred during the pricing week"
+        examples:
+          - "Haloween"
+        businessName: "Special events"

@@ -46,7 +46,7 @@ This data catalogue is a proof of concept. We are aiming to use this version to 
 
 # Contributing a dataset:
 
-To contribute a dataset to this catalogue, please submit either an issue to this repository outlining the dataset and why it should be added to the catalogue, or a pull request with the proposed changes for us to review and approve.
+To contribute a dataset to this catalogue, please submit either an issue to this repository outlining the dataset and why it should be added to the catalogue, or a pull request with the proposed changes for us to review and approve. See the full contriubting proces flushed out on the [price statistics reproducibility project site](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html). 
 
 ## Technical context
 
@@ -55,3 +55,11 @@ We are exploring the use of [data contract cli](https://cli.datacontract.com/) a
 ## Who are we?
 
 This catalogue is maintained by the reproducibility project team (which is a workstream of the UN Task Team for Scanner data). [Read more about us here](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/about.html).
+
+## Config
+
+To run this locally, install datacontract-cli and run:
+
+> datacontract catalog --files "datasets/*.odcs.yaml" --output _site
+
+The `post-processing.py` executes afterwards to clean the html files

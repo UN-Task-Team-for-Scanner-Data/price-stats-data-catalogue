@@ -1,0 +1,110 @@
+apiVersion: "v3.1.0"
+kind: "DataContract"
+id: "italian-food-supermarkets"
+version: "1.0"
+status: "<a href='https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html#maturity-model'>Documentation level</a>: 3"
+name: "Variations of Food Prices in Italian Supermarkets"
+description:
+  purpose: |
+    This web scraped dataset includes retail prices for meat, fruit, and vegetable products collected over a period spanning from December 2020 to March 2023 (2 years and 4.5 months or 862 days).
+
+    Dataset facilitates comprehensive analyses, enabling exploration of regional price variations, comparisons across product categories, and time-series investigations into price dynamics within the Italian retail food market.
+  limitations: |
+    <i>APA style:</i> <br>Sasso, D., Bacco, L., Palumbo, L., Marcucci, J., Salvini, N., Laureti, T., & Vollero, L. (2025). Variations of Food Prices in Italian Supermarkets (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.14927602<br>
+    <br>
+    <i>Chicago style</i><br>Sasso, Daniele, Luca Bacco, Luigi Palumbo, Juri Marcucci, Niccolo Salvini, Tiziana Laureti, and Luca Vollero. "Variations of Food Prices in Italian Supermarkets". Zenodo, February 25, 2025. https://doi.org/10.5281/zenodo.14927602.<br>
+    <br>
+    <i>Bibtex citation</i><br><a href='https://URL'>Click here for raw form</a>
+  usage: |
+    Open dataset, shared under "Creative Commons Attribution 4.0 International" licence on Zenodo.
+
+    <br><br>
+    <b>Links:</b><br>
+    <ul>
+      <li>Dataset: <a href='https://doi.org/10.5281/zenodo.14927602'>https://doi.org/10.5281/zenodo.14927602</a></li>
+      <li>Dataset paper: <a href='https://doi.org/10.1016/j.dib.2025.112089'>https://doi.org/10.1016/j.dib.2025.112089</a></li>
+    </ul>
+  # TO DO: review and test later. Commented out as this does not render by datacontract-cli with the current version
+  # authoritativeDefinitions: 
+  #   - type: "Dataset zenodo record"
+  #     url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf"
+  #     description: "CPI Manual version"
+domain: "Consumer Price Statistics"
+tenant: "Sasso et al (2025) https://doi.org/10.5281/zenodo.14927602"
+tags:
+  - "web-scraped"
+  - "groceries-and-food"
+team:
+  name: "Sasso, Daniele, Luca Bacco, Luigi Palumbo, Juri Marcucci, Niccolo Salvini, Tiziana Laureti, and Luca Vollero"
+  description: "https://doi.org/10.5281/zenodo.14927602"
+schema:
+  - name: "Dataset"
+    businessName: ""
+    description: |
+      File Information:<br>
+          - Format: CSV (.csv), UTF-8 encoded, comma-separated.<br>
+          - Each row corresponds to one product observation at a specific store on a specific date.<br>
+          - No missing values are present in the cleaned version.
+    type: "object"
+    properties:
+      - name: "date"
+        logicalType: "object"
+        description: |
+          Date of price collection.
+          Dataset total coverage is 2 years, 4.5 months (2020-12-03 to 2023-04-14)
+          Dataset based on 841 distinct web scrapes, with an average 236 unique products captured each time per scraped store. The amount of web offers started to decline by mid-2022. <br>Example: '2020-12-03'
+        examples:
+          - "2020-12-03"
+        businessName: "Scrape date"
+      - name: "price"
+        logicalType: "number"
+        description: |
+          Retail price in euros (EUR), using a decimal point (.). <br>Example: '1.99'
+        examples:
+          - "1.99"
+        businessName: "Product price"
+      - name: "product_id"
+        logicalType: "integer"
+        description: |
+          A unique identifier assigned to each product.
+          There are 2,361 unique products in the sample spread relatively equally across the COICOP categories. <br>Example: '2'
+        examples:
+          - "2"
+        businessName: "Product ID"
+      - name: "store_id"
+        logicalType: "integer"
+        description: |
+          Anonymized unique identifier of the store where the price was recorded.
+          There are 20 distinct stores covered by the dataset. <br>Example: '2'
+        examples:
+          - "2"
+        businessName: "Store ID"
+      - name: "region"
+        logicalType: "object"
+        description: |
+          Italian region where the store is located.
+          There are 7 distinct regions of Italy covered by the dataset. <br>Example: 'Calabria'
+        examples:
+          - "Calabria"
+        businessName: "Region"
+      - name: "product"
+        logicalType: "object"
+        description: "Full commercial name of the product, including quantity or weight. <br>Example: 'arance navelina italia calibro 1.5 kg'"
+        examples:
+          - "arance navelina italia calibro 1.5 kg"
+        businessName: "Product name"
+      - name: "COICOP5"
+        logicalType: "object"
+        description: |
+          Product classification at the 5-digit level based on the COICOP nomenclature.
+          There are 24 COICOP5 categories covered by the dataset. Classification was assigned via manual annotation and rule-based categorization using domain-specific keywords. <br>Example: 'Oranges'
+        examples:
+          - "Oranges"
+        businessName: "COICOP5 category"
+      - name: "COICOP4"
+        logicalType: "object"
+        description: |
+          Higher-level COICOP category. Classification assigned via manual annotation and rule-based categorization using domain-specific keywords (tied to COICOP5). <br>Example: 'Fruit'
+        examples:
+          - "Fruit"
+        businessName: "COICOP4 category"

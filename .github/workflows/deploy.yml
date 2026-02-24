@@ -20,14 +20,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install datacontract-cli[all]
+          pip install datacontract-cli
           pip install beautifulsoup4
+          pip install html5lib
           
       # change directory first and then output to a site folder
       - name: create catalog
         run: |
-          cd datasets/
-          datacontract catalog --output ../_site/
+          datacontract catalog --files "datasets/*.yaml" --output _site
 
       # Run post-processing to change html files
       - name: Run script

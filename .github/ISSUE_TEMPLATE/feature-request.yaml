@@ -1,0 +1,19 @@
+name: Catalogue Feature request
+description: Have an idea for how we can make the catalogue better? Let us know!
+title: "[CHANGE] <title>"
+labels: ["change", "Needs Triage"]
+assignees: "sergegoussev"
+body:
+- type: markdown
+  attributes:
+    value: |
+
+      We welcome any ideas on how to make the catalogue better! Please enter your thoughts below.
+    
+- type: textarea
+  id: change-description
+  attributes:
+    label: Tell us a bit about your proposed change
+    description: Make sure to add links to examples if you think they are appropriate.
+  validations:
+    required: true
