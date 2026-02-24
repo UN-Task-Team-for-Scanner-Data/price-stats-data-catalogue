@@ -22,7 +22,7 @@ description:
     <br>
     <i>Chicago style</i><br>ILO et al "Turvey Dataset". Consumer Price Index manual: theory and practice (2004). https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@dgreports/@stat/documents/presentation/wcms_331153.pdf<br>
     <br>
-    <i>Bibtex citation</i><br><a href='https:URL'>Click here for raw form</a>
+    <i>Bibtex citation</i><br><a href='https://raw.githubusercontent.com/UN-Task-Team-for-Scanner-Data/price-stats-data-catalogue/main/bitex/turvey.bib'>Click here for raw form</a>
 
   usage: |
     Open dataset, publicly shared by ILO et al (2004) CPI manual

@@ -12,7 +12,7 @@ description:
     <br>
     <i>Chicago style</i><br>Eurostat "Seasonal Products Dataset". Guide on multilateral methods in the Harmonised Index on Consumer Prices (HICP) (2022). https://doi.org/10.2785/873932<br>
     <br>
-    <i>Bibtex citation</i><br><a href='https://URL'>Click here for raw form</a>
+    <i>Bibtex citation</i><br><a href='https://raw.githubusercontent.com/UN-Task-Team-for-Scanner-Data/price-stats-data-catalogue/main/bitex/eurostat-seasonal.bib'>Click here for raw form</a>
   usage: |
     Open dataset, shared as part of the Guide on Multilateral Methods in the Harmonised Index on Consumer Prices (HICP) under "Creative Commons Attribution 4.0 International (CC-BY 4.0)" licence.
 
