@@ -1,9 +1,9 @@
 apiVersion: "v3.1.0"
 kind: "DataContract"
-id: "eurostat-mutlitlateral-seasonal"
+id: "eurostat-seasonal-products-dataset"
 version: "1.0"
 status: "<b>Draft</b><br><a href='https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/catalogue/contributing.html#maturity-model'>Target documentation level</a>: 2"
-name: "Eurostat seasonality multilateral dataset"
+name: "Eurostat seasonal products dataset"
 description:
   purpose: |
     Dataset developed by Eurostat for the 'Guide on Multilateral Methods in the HICP' with seasonal data to help demonstrate multilateral methods
